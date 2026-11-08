@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surat Selamat Hari Senin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="scene">
+  <p class="eyebrow">SEBUAH PESAN UNTUK MEMULAI PEKAN</p>
+  <h1>Surat Hari Senin</h1>
+  <p class="instruction" id="instruction">Ada surat untukmu. Tekan tombol di bawah untuk membukanya.</p>
+
+  <section class="envelope-area">
+    <article class="letter">
+      <div class="letter-content">
+        <div class="letter-date" id="tanggal"></div>
+        <div class="ornament">✦ ───── ☀ ───── ✦</div>
+        <h2>Selamat Hari Senin</h2>
+        <div class="arabic"></div>
+        <p class="greeting"></p>
+        <p>Selamat pagi dan selamat memulai hari Senin! Semoga awal pekan ini membawa semangat baru, pikiran yang jernih, dan hati yang penuh rasa syukur.</p>
+        <p>Jangan takut menghadapi tantangan baru. Jalani setiap kegiatan dengan niat baik, usaha terbaik, dan tetap percaya bahwa setiap langkah kecil dapat membawa kita menuju hal yang lebih baik.</p>
+        <p>Awali hari dengan senyuman, jangan lupa berdoa, dan tebarkan kebaikan kepada orang-orang di sekitar kita.</p>
+        <p class="closing">Selamat beraktivitas. Semoga hari Seninmu menyenangkan!</p>
+        <div class="signature">Salam hangat,<br><strong>Semangat Mengawali Pekan</strong></div>
+        <div class="bottom-ornament">❦</div>
+      </div>
+    </article>
+    <div class="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-front"></div>
+      <div class="envelope-flap"></div>
+      <div class="seal">☀</div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button id="openButton" class="action-button">✉ Buka Surat</button>
+    <button id="closeButton" class="action-button secondary" hidden>Tutup Surat</button>
+    <button id="musicButton" class="music-button">♫ Putar Musik</button>
+  </div>
+  <p class="footer-note">Awali pekan dengan doa dan semangat baru ✨</p>
+  <audio id="backgroundMusic" src="soundtrack.mp3" preload="metadata" loop></audio>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

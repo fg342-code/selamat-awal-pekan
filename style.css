@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; padding: 38px 16px; display: grid; place-items: center;
+  color: #fff8e9; font-family: 'DM Sans', sans-serif;
+  background: radial-gradient(circle at 15% 15%, #d5a34c 0, transparent 27%),
+    radial-gradient(circle at 85% 85%, #557b48 0, transparent 30%),
+    linear-gradient(135deg, #183c32, #386b45 55%, #183b32);
+  overflow-x: hidden;
+}
+.scene { width: min(100%, 560px); text-align: center; }
+.eyebrow { margin: 0 0 10px; color: #f1d18b; letter-spacing: 3px; font-size: 11px; font-weight: 700; }
+h1 { margin: 0; font: 700 clamp(28px, 6vw, 39px) 'Playfair Display', Georgia, serif; }
+.instruction { margin: 12px 0 0; color: #f2ead9; font-size: 14px; }
+.envelope-area { position: relative; width: min(100%, 440px); height: 340px; margin: 24px auto 10px; perspective: 1100px; }
+.envelope { position: absolute; z-index: 3; width: 100%; height: 235px; bottom: 16px; left: 0; filter: drop-shadow(0 18px 18px #14221888); }
+.envelope-back { position: absolute; inset: 0; border-radius: 8px; background: #c49b58; }
+.envelope-front { position: absolute; inset: 0; background: #e3c58b; clip-path: polygon(0 0, 50% 57%, 100% 0, 100% 100%, 0 100%); border-radius: 0 0 8px 8px; }
+.envelope-flap { position: absolute; inset: 0 0 auto; height: 62%; background: #f0d9a8; clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top center; transition: transform .85s ease, z-index .1s .4s; z-index: 5; backface-visibility: hidden; }
+.seal { position: absolute; z-index: 6; top: 94px; left: 50%; transform: translateX(-50%); width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; color: #fff4d6; background: #3c6843; border: 2px solid #e6ca8b; font-size: 23px; transition: opacity .25s ease; }
+.letter { position: absolute; z-index: 2; left: 5%; bottom: 30px; width: 90%; height: 285px; overflow: hidden; padding: 0 23px; color: #37352d; text-align: left; background: #fffaf0; border: 1px solid #e0c990; box-shadow: 0 8px 25px #061d1740; transition: transform 1s cubic-bezier(.2,.8,.2,1), height .7s ease; }
+.letter-content { padding: 25px 0 20px; opacity: 0; transition: opacity .45s ease .5s; }
+.letter-date { text-align: right; color: #88744e; font-size: 11px; }
+.ornament, .bottom-ornament { text-align: center; color: #b18b45; margin: 12px 0; }
+.letter h2 { margin: 8px 0; text-align: center; color: #37633d; font: 700 25px 'Playfair Display', Georgia, serif; }
+.arabic { text-align: center; color: #a27a35; font-size: 22px; margin: 10px 0 20px; }
+.letter p { font: 14px/1.8 Georgia, serif; margin: 0 0 13px; }
+.letter .greeting { color: #37633d; font-weight: bold; }
+.letter .closing { margin-top: 20px; }
+.signature { margin-top: 18px; text-align: right; color: #80652f; font: italic 13px/1.8 Georgia, serif; }
+.bottom-ornament { font-size: 23px; }
+.actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.action-button, .music-button { min-width: 145px; padding: 13px 20px; border: 0; border-radius: 999px; color: #29452e; background: #efd28f; font: 700 14px 'DM Sans', sans-serif; cursor: pointer; box-shadow: 0 7px 18px #14221840; transition: transform .2s, background .2s; }
+.action-button:hover, .music-button:hover { transform: translateY(-2px); background: #ffe5a8; }
+.secondary { color: #fff5df; background: #426b48; border: 1px solid #b4c79b; }
+.secondary:hover { background: #527d56; }
+.music-button { color: #fff5df; background: #315c43; border: 1px solid #b4c79b; }
+.music-button:hover { background: #47734f; }
+[hidden] { display: none !important; }
+.footer-note { color: #e6eadb; font-size: 12px; margin-top: 22px; }
+.scene.open .envelope-flap { transform: rotateX(180deg); z-index: 1; }
+.scene.open .seal { opacity: 0; }
+.scene.open .letter { z-index: 4; transform: translateY(-125px); height: 285px; }
+.scene.reading .letter { position: relative; left: auto; bottom: auto; width: min(100%, 440px); height: min(70vh, 650px); min-height: 420px; margin: 0 auto; padding: 0 25px; overflow-y: auto; transform: translateY(-5px); z-index: 7; border-radius: 3px; }
+.scene.reading .letter-content { opacity: 1; }
+.scene.reading .envelope { opacity: 0; pointer-events: none; }
+.scene.reading .letter { scrollbar-color: #c6a15b #fffaf0; }
+@media (max-width: 480px) {
+  .envelope-area { height: 310px; } .envelope { height: 205px; } .letter { height: 255px; }
+  .scene.open .letter { transform: translateY(-115px); } .letter p { font-size: 13px; }
+  .scene.reading .letter { height: 68vh; }
+}
